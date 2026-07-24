@@ -23,8 +23,7 @@ export default function PatiosPage() {
           <div className="max-w-3xl">
             <div className="marker-line mb-6 text-[var(--accent)]">What We Do</div>
             <h1 className="font-display font-extrabold text-5xl lg:text-7xl leading-tight tracking-tight text-white mb-6">
-              Patios &amp; <br />
-              <span className="text-gradient">Paving</span>
+              <span className="text-gradient">Patios &amp; Paving</span>
             </h1>
             <p className="text-lg lg:text-xl text-[var(--fg-2)] max-w-2xl leading-relaxed">
               Extend your living space outdoors with a beautifully crafted
