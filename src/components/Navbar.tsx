@@ -57,7 +57,7 @@ export default function Navbar() {
             <a href="/services/patios" className="hover:text-[var(--accent)] transition">
               Patios
             </a>
-            <a href="#contact" className="hover:text-[var(--accent)] transition">
+            <a href="/contact" className="hover:text-[var(--accent)] transition">
               Contact
             </a>
           </div>
@@ -169,7 +169,7 @@ export default function Navbar() {
               Patios
             </a>
             <a
-              href="#contact"
+              href="/contact"
               onClick={closeMenu}
               className="text-lg font-medium text-[var(--fg)] hover:text-[var(--accent)] transition py-3 px-4 rounded-xl hover:bg-white/5"
             >
