@@ -78,10 +78,10 @@ export default function Projects() {
               <div className="overlay"></div>
               <div className="absolute bottom-0 left-0 p-6 z-10">
                 <div className="text-xs tracking-widest text-[var(--accent)] mb-1 uppercase font-semibold">
-                  Pathway
+                  Boundary
                 </div>
                 <h3 className="font-display font-bold text-lg text-white">
-                  Side Garden Pathway
+                  Boundary Hedge
                 </h3>
               </div>
             </div>
@@ -99,10 +99,10 @@ export default function Projects() {
             <div className="overlay"></div>
             <div className="absolute bottom-0 left-0 p-6 z-10">
               <div className="text-xs tracking-widest text-[var(--accent)] mb-1 uppercase font-semibold">
-                Garden
+                Pathway
               </div>
               <h3 className="font-display font-bold text-lg text-white">
-                Rear Garden
+                Side Garden Pathway
               </h3>
             </div>
           </div>
@@ -117,10 +117,10 @@ export default function Projects() {
             <div className="overlay"></div>
             <div className="absolute bottom-0 left-0 p-6 z-10">
               <div className="text-xs tracking-widest text-[var(--accent)] mb-1 uppercase font-semibold">
-                Boundary
+                Garden
               </div>
               <h3 className="font-display font-bold text-lg text-white">
-                Boundary Hedge
+                Rear Garden
               </h3>
             </div>
           </div>
