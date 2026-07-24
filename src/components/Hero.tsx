@@ -80,7 +80,7 @@ export default function Hero() {
                 <div className="font-semibold text-white whitespace-nowrap">5.0 Review on Bark &amp; Facebook</div>
               </div>
             </div>
-            <div className="w-px h-8 bg-white/15" />
+            <div className="hidden sm:block w-px h-8 bg-white/15" />
             {/* Shield */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white/10 border border-white/10 flex items-center justify-center backdrop-blur-sm">
