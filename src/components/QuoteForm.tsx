@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Reveal from "./Reveal";
 
 type Step = 1 | 2 | 3 | 4 | 5 | 6 | 7;
@@ -86,6 +86,22 @@ export default function QuoteForm() {
       setPhone("");
     }, 500);
   };
+
+  // Auto-advance effect for steps 1-3 (selection-based)
+  // Uses useEffect so handleNext runs with committed state, not a stale closure
+  useEffect(() => {
+    const hasValue =
+      (step === 1 && propertyType) ||
+      (step === 2 && serviceType) ||
+      (step === 3 && timeframe);
+
+    if (hasValue) {
+      const t = setTimeout(() => {
+        if (step < 7) setStep((step + 1) as Step);
+      }, 200);
+      return () => clearTimeout(t);
+    }
+  }, [step, propertyType, serviceType, timeframe]);
 
   const getStepTitle = () => {
     switch (step) {
@@ -202,10 +218,7 @@ export default function QuoteForm() {
                       <button
                         key={opt.value}
                         type="button"
-                        onClick={() => {
-                          setPropertyType(opt.value);
-                          setTimeout(() => handleNext(), 200);
-                        }}
+                        onClick={() => setPropertyType(opt.value)}
                         className="flex flex-col gap-1.5 py-3 px-3 items-center justify-center rounded-xl transition-all border-2 select-none cursor-pointer bg-white"
                         style={{
                           width: "calc(33.333% - 10px)",
@@ -245,10 +258,7 @@ export default function QuoteForm() {
                       <button
                         key={opt.value}
                         type="button"
-                        onClick={() => {
-                          setServiceType(opt.value);
-                          setTimeout(() => handleNext(), 200);
-                        }}
+                        onClick={() => setServiceType(opt.value)}
                         className="flex flex-col gap-2 py-4 px-5 items-center justify-center rounded-xl transition-all border-2 select-none cursor-pointer bg-white"
                         style={{
                           width: "calc(50% - 8px)",
@@ -284,10 +294,7 @@ export default function QuoteForm() {
                       <button
                         key={opt.value}
                         type="button"
-                        onClick={() => {
-                          setTimeframe(opt.value);
-                          setTimeout(() => handleNext(), 200);
-                        }}
+                        onClick={() => setTimeframe(opt.value)}
                         className="flex flex-col gap-2 py-4 px-5 items-center justify-center rounded-xl transition-all border-2 select-none cursor-pointer bg-white"
                         style={{
                           width: "calc(50% - 8px)",
