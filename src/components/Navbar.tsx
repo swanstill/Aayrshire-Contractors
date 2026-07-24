@@ -37,11 +37,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-3 lg:px-10 py-3 lg:py-4 flex items-center justify-between gap-1 lg:gap-2">
         {/* Logo */}
-        <a href="#" className="flex items-center group max-w-[110px] lg:max-w-none shrink-0 min-w-0">
+        <a href="#" className="flex items-center group max-w-[140px] lg:max-w-none shrink-0 min-w-0">
           <img
             src="https://z-cdn-media.chatglm.cn/files/a88b650a-6903-4392-918b-42d4e36484af.jpg?auth_key=1884723959-bcde81dd40334b41a960e1c90e971a95-0-e5a09e18619a38a90eba9b161828ebde"
             alt="Ayrshire Contractors Logo"
-            className="h-11 lg:h-20 w-auto rounded-lg shadow-sm block max-w-full"
+            className="h-14 lg:h-20 w-auto rounded-lg shadow-sm block max-w-full"
           />
         </a>
 
