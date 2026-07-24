@@ -147,7 +147,7 @@ export default function QuoteForm() {
                     </div>
 
                     {/* Step circles */}
-                    <div className="flex items-start relative z-10 gap-0.5 md:gap-2 overflow-x-auto pb-0.5">
+                    <div className="flex items-start justify-center relative z-10 gap-0.5 md:gap-2 overflow-x-auto pb-0.5">
                       {steps.map((s) => (
                         <div
                           key={s.num}
@@ -194,7 +194,7 @@ export default function QuoteForm() {
               </div>
 
               {/* Options / Inputs */}
-              <div className="min-h-[180px] flex items-start justify-center mb-4">
+              <div className="min-h-[180px] flex items-start justify-center mb-4 relative z-10" style={{ touchAction: "manipulation" }}>
                 {/* Step 1 - Property Type */}
                 {step === 1 && (
                   <div className="flex flex-wrap items-center justify-center gap-3 w-full px-2">
