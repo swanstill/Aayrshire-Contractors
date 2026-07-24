@@ -26,7 +26,7 @@ export default function Projects() {
           {/* Large */}
           <div className="md:col-span-7 project-card h-[460px]">
             <Image
-              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=80"
+              src="/projects/project-1.jpg"
               alt="Modern driveway"
               width={900}
               height={460}
@@ -51,7 +51,7 @@ export default function Projects() {
           <div className="md:col-span-5 grid grid-cols-1 gap-5">
             <div className="project-card h-[217px]">
               <Image
-                src="https://images.unsplash.com/photo-1564540583246-934409427776?w=600&q=80"
+                src="/projects/project-2.jpg"
                 alt="Patio project"
                 width={600}
                 height={217}
@@ -69,7 +69,7 @@ export default function Projects() {
             </div>
             <div className="project-card h-[217px]">
               <Image
-                src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80"
+                src="/projects/project-3.jpg"
                 alt="Garden project"
                 width={600}
                 height={217}
@@ -90,7 +90,7 @@ export default function Projects() {
           {/* Bottom row */}
           <div className="md:col-span-4 project-card h-[300px]">
             <Image
-              src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600&q=80"
+              src="/projects/project-4.jpg"
               alt="Block paving"
               width={600}
               height={300}
@@ -108,7 +108,7 @@ export default function Projects() {
           </div>
           <div className="md:col-span-4 project-card h-[300px]">
             <Image
-              src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80"
+              src="/projects/project-5.jpg"
               alt="Fencing"
               width={600}
               height={300}
@@ -126,7 +126,7 @@ export default function Projects() {
           </div>
           <div className="md:col-span-4 project-card h-[300px]">
             <Image
-              src="https://images.unsplash.com/photo-1597844808175-cd5b8e6bb4e0?w=600&q=80"
+              src="/projects/project-6.jpg"
               alt="Paving"
               width={600}
               height={300}
