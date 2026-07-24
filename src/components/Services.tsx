@@ -79,7 +79,7 @@ export default function Services() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
             <div className="img-zoom rounded-2xl overflow-hidden shadow-xl shadow-black/30">
               <Image
-                src="https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=800&q=80"
+                src="/services/patios.jpg"
                 alt="Patio installation"
                 width={800}
                 height={420}
