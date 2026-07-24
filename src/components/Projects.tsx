@@ -35,14 +35,14 @@ export default function Projects() {
             <div className="overlay"></div>
             <div className="absolute bottom-0 left-0 p-8 z-10">
               <div className="text-xs tracking-widest text-[var(--accent)] mb-2 uppercase font-semibold">
-                Driveway · Manchester
+                Porcelain Patio
               </div>
               <h3 className="font-display font-bold text-2xl lg:text-3xl text-white">
-                Contemporary Resin Frontage
+                Porcelain Patio Area
               </h3>
               <p className="text-sm text-[var(--fg-2)] mt-2 max-w-md">
-                A complete transformation featuring resin bound surfacing with
-                new edging and drainage.
+                A stunning porcelain patio installation creating the perfect
+                outdoor entertaining space.
               </p>
             </div>
           </div>
