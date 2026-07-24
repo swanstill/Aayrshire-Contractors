@@ -106,7 +106,7 @@ export default function Navbar() {
 
       {/* Mobile drawer — moved OUTSIDE <nav> so backdrop-filter doesn't break its fixed positioning */}
       <div
-        className={`fixed inset-0 z-40 transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 z-[60] transition-all duration-300 lg:hidden ${
           menuOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
