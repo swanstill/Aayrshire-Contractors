@@ -64,7 +64,7 @@ export default function Services() {
             </div>
             <div className="order-1 lg:order-2 img-zoom rounded-2xl overflow-hidden shadow-xl shadow-black/30">
               <Image
-                src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=800&q=80"
+                src="/services/landscaping.jpg"
                 alt="Landscaping and garden design"
                 width={800}
                 height={420}
