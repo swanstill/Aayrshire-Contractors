@@ -51,10 +51,10 @@ export default function Navbar() {
             <a href="#" className="hover:text-[var(--accent)] transition">
               Home
             </a>
-            <a href="#services" className="hover:text-[var(--accent)] transition">
+            <a href="/services/landscaping" className="hover:text-[var(--accent)] transition">
               Landscaping
             </a>
-            <a href="#services" className="hover:text-[var(--accent)] transition">
+            <a href="/services/patios" className="hover:text-[var(--accent)] transition">
               Patios
             </a>
             <a href="#contact" className="hover:text-[var(--accent)] transition">
@@ -155,14 +155,14 @@ export default function Navbar() {
               Home
             </a>
             <a
-              href="#services"
+              href="/services/landscaping"
               onClick={closeMenu}
               className="text-lg font-medium text-[var(--fg)] hover:text-[var(--accent)] transition py-3 px-4 rounded-xl hover:bg-white/5"
             >
               Landscaping
             </a>
             <a
-              href="#services"
+              href="/services/patios"
               onClick={closeMenu}
               className="text-lg font-medium text-[var(--fg)] hover:text-[var(--accent)] transition py-3 px-4 rounded-xl hover:bg-white/5"
             >

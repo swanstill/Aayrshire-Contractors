@@ -41,7 +41,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/services/landscaping"
                   className="hover:text-[var(--accent)] transition"
                 >
                   Landscaping
@@ -49,7 +49,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/services/patios"
                   className="hover:text-[var(--accent)] transition"
                 >
                   Patios
