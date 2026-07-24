@@ -29,80 +29,82 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav
-      id="navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0D0D0D] border-b border-white/5 ${
-        scrolled ? "nav-scrolled" : ""
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-3 lg:px-10 py-3 lg:py-4 flex items-center justify-between gap-1 lg:gap-2">
-        {/* Logo */}
-        <a href="#" className="flex items-center group max-w-[140px] lg:max-w-none shrink-0 min-w-0">
-          <img
-            src="https://z-cdn-media.chatglm.cn/files/a88b650a-6903-4392-918b-42d4e36484af.jpg?auth_key=1884723959-bcde81dd40334b41a960e1c90e971a95-0-e5a09e18619a38a90eba9b161828ebde"
-            alt="Ayrshire Contractors Logo"
-            className="h-[70px] lg:h-20 w-auto rounded-lg shadow-sm block max-w-full"
-          />
-        </a>
+    <>
+      <nav
+        id="navbar"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0D0D0D] border-b border-white/5 ${
+          scrolled ? "nav-scrolled" : ""
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-3 lg:px-10 py-3 lg:py-4 flex items-center justify-between gap-1 lg:gap-2">
+          {/* Logo */}
+          <a href="#" className="flex items-center group max-w-[140px] lg:max-w-none shrink-0 min-w-0">
+            <img
+              src="https://z-cdn-media.chatglm.cn/files/a88b650a-6903-4392-918b-42d4e36484af.jpg?auth_key=1884723959-bcde81dd40334b41a960e1c90e971a95-0-e5a09e18619a38a90eba9b161828ebde"
+              alt="Ayrshire Contractors Logo"
+              className="h-[70px] lg:h-20 w-auto rounded-lg shadow-sm block max-w-full"
+            />
+          </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-9 text-sm font-medium text-[var(--fg)]">
-          <a href="#" className="hover:text-[var(--accent)] transition">
-            Home
-          </a>
-          <a href="#services" className="hover:text-[var(--accent)] transition">
-            Landscaping
-          </a>
-          <a href="#services" className="hover:text-[var(--accent)] transition">
-            Patios
-          </a>
-          <a href="#contact" className="hover:text-[var(--accent)] transition">
-            Contact
-          </a>
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-9 text-sm font-medium text-[var(--fg)]">
+            <a href="#" className="hover:text-[var(--accent)] transition">
+              Home
+            </a>
+            <a href="#services" className="hover:text-[var(--accent)] transition">
+              Landscaping
+            </a>
+            <a href="#services" className="hover:text-[var(--accent)] transition">
+              Patios
+            </a>
+            <a href="#contact" className="hover:text-[var(--accent)] transition">
+              Contact
+            </a>
+          </div>
+
+          {/* Right */}
+          <div className="flex items-center gap-1.5 lg:gap-3 min-w-0 shrink-0">
+            <a
+              href="tel:08001234567"
+              className="hidden lg:flex items-center gap-2 text-sm font-medium hover:text-[var(--accent)] transition"
+            >
+              <i className="fa-solid fa-phone-volume text-[var(--accent)]"></i>
+              <span>07427 009786</span>
+            </a>
+            <a
+              href="#quote"
+              className="btn-primary px-3 lg:px-5 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold flex items-center gap-1 lg:gap-2"
+            >
+              Get a free quote
+              <i className="fa-solid fa-arrow-right text-[10px] lg:text-xs"></i>
+            </a>
+            {/* Hamburger — mobile only */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="lg:hidden flex flex-col gap-1 p-1.5 rounded-lg hover:bg-white/5 transition cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              <span
+                className={`block w-5 h-[2px] bg-[var(--fg)] transition-all duration-300 ${
+                  menuOpen ? "rotate-45 translate-y-[3px]" : ""
+                }`}
+              />
+              <span
+                className={`block w-5 h-[2px] bg-[var(--fg)] transition-all duration-300 ${
+                  menuOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block w-5 h-[2px] bg-[var(--fg)] transition-all duration-300 ${
+                  menuOpen ? "-rotate-45 -translate-y-[3px]" : ""
+                }`}
+              />
+            </button>
+          </div>
         </div>
+      </nav>
 
-        {/* Right */}
-        <div className="flex items-center gap-1.5 lg:gap-3 min-w-0 shrink-0">
-          <a
-            href="tel:08001234567"
-            className="hidden lg:flex items-center gap-2 text-sm font-medium hover:text-[var(--accent)] transition"
-          >
-            <i className="fa-solid fa-phone-volume text-[var(--accent)]"></i>
-            <span>07427 009786</span>
-          </a>
-          <a
-            href="#quote"
-            className="btn-primary px-3 lg:px-5 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold flex items-center gap-1 lg:gap-2"
-          >
-            Get a free quote
-            <i className="fa-solid fa-arrow-right text-[10px] lg:text-xs"></i>
-          </a>
-          {/* Hamburger — mobile only */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden flex flex-col gap-1 p-1.5 rounded-lg hover:bg-white/5 transition cursor-pointer"
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`block w-5 h-[2px] bg-[var(--fg)] transition-all duration-300 ${
-                menuOpen ? "rotate-45 translate-y-[3px]" : ""
-              }`}
-            />
-            <span
-              className={`block w-5 h-[2px] bg-[var(--fg)] transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block w-5 h-[2px] bg-[var(--fg)] transition-all duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-[3px]" : ""
-              }`}
-            />
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile drawer */}
+      {/* Mobile drawer — moved OUTSIDE <nav> so backdrop-filter doesn't break its fixed positioning */}
       <div
         className={`fixed inset-0 z-40 transition-all duration-300 lg:hidden ${
           menuOpen ? "pointer-events-auto" : "pointer-events-none"
@@ -192,6 +194,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
