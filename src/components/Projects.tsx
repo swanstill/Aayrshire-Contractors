@@ -60,10 +60,10 @@ export default function Projects() {
               <div className="overlay"></div>
               <div className="absolute bottom-0 left-0 p-6 z-10">
                 <div className="text-xs tracking-widest text-[var(--accent)] mb-1 uppercase font-semibold">
-                  Patio
+                  Block Paving
                 </div>
                 <h3 className="font-display font-bold text-lg text-white">
-                  Sandstone Patio
+                  Block Paved Driveway
                 </h3>
               </div>
             </div>
