@@ -41,7 +41,7 @@ export default function Navbar() {
           <img
             src="https://z-cdn-media.chatglm.cn/files/a88b650a-6903-4392-918b-42d4e36484af.jpg?auth_key=1884723959-bcde81dd40334b41a960e1c90e971a95-0-e5a09e18619a38a90eba9b161828ebde"
             alt="Ayrshire Contractors Logo"
-            className="h-[54px] lg:h-20 w-auto rounded-lg shadow-sm block max-w-full"
+            className="h-[70px] lg:h-20 w-auto rounded-lg shadow-sm block max-w-full"
           />
         </a>
 
