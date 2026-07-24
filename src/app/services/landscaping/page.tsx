@@ -101,7 +101,7 @@ export default function LandscapingPage() {
                 desc: "Natural turf installation or premium artificial grass for a lush, green lawn all year round with zero maintenance.",
               },
               {
-                icon: "fa-fence",
+                icon: "fa-border-all",
                 title: "Fencing &amp; Boundaries",
                 desc: "Timber fencing, panel replacement, and boundary treatments for privacy and security.",
               },
