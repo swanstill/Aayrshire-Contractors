@@ -142,6 +142,62 @@ export default function Projects() {
               </h3>
             </div>
           </div>
+
+          {/* Bottom row — new projects */}
+          <div className="md:col-span-4 project-card h-[300px]">
+            <Image
+              src="/projects/block-paving-driveway.jpg"
+              alt="Block paving driveway"
+              width={600}
+              height={300}
+              className="w-full h-full object-cover"
+            />
+            <div className="overlay"></div>
+            <div className="absolute bottom-0 left-0 p-6 z-10">
+              <div className="text-xs tracking-widest text-[var(--accent)] mb-1 uppercase font-semibold">
+                Block Paving
+              </div>
+              <h3 className="font-display font-bold text-lg text-white">
+                Driveway Installation
+              </h3>
+            </div>
+          </div>
+          <div className="md:col-span-4 project-card h-[300px]">
+            <Image
+              src="/projects/landscaping-fencing.jpg"
+              alt="Garden fencing"
+              width={600}
+              height={300}
+              className="w-full h-full object-cover"
+            />
+            <div className="overlay"></div>
+            <div className="absolute bottom-0 left-0 p-6 z-10">
+              <div className="text-xs tracking-widest text-[var(--accent)] mb-1 uppercase font-semibold">
+                Fencing
+              </div>
+              <h3 className="font-display font-bold text-lg text-white">
+                Garden Fencing
+              </h3>
+            </div>
+          </div>
+          <div className="md:col-span-4 project-card h-[300px]">
+            <Image
+              src="/projects/block-paving-driveway-1.jpg"
+              alt="Block paving"
+              width={600}
+              height={300}
+              className="w-full h-full object-cover"
+            />
+            <div className="overlay"></div>
+            <div className="absolute bottom-0 left-0 p-6 z-10">
+              <div className="text-xs tracking-widest text-[var(--accent)] mb-1 uppercase font-semibold">
+                Block Paving
+              </div>
+              <h3 className="font-display font-bold text-lg text-white">
+                Block Paved Driveway
+              </h3>
+            </div>
+          </div>
         </div>
       </div>
     </section>

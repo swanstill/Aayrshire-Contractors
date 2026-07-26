@@ -57,6 +57,14 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="/gallery"
+                  className="hover:text-[var(--accent)] transition"
+                >
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a
                   href="/contact"
                   className="hover:text-[var(--accent)] transition"
                 >
@@ -99,15 +107,15 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-[var(--line-strong)] flex flex-wrap items-center justify-between gap-4 text-xs text-[var(--muted)]">
           <div>© 2026 Ayrshire Contractors. All rights reserved.</div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-[var(--accent)] transition">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-[var(--accent)] transition">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-[var(--accent)] transition">
-              Cookies
+          <div className="text-xs text-[var(--muted)]">
+            Website design with <span className="text-red-400 text-base">♥</span> by{" "}
+            <a
+              href="https://www.tradesgrow.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--accent)] transition"
+            >
+              Trades Grow
             </a>
           </div>
         </div>
