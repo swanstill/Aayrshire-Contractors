@@ -75,7 +75,7 @@ export default function Navbar() {
               <span>07427 009786</span>
             </a>
             <a
-              href="#quote"
+              href="/#quote"
               className="btn-primary px-3 lg:px-5 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold flex items-center gap-1 lg:gap-2"
             >
               Get a free quote
@@ -195,7 +195,7 @@ export default function Navbar() {
               07427 009786
             </a>
             <a
-              href="#quote"
+              href="/#quote"
               onClick={closeMenu}
               className="btn-primary text-center px-5 py-3 rounded-full text-sm font-semibold mt-4"
             >
