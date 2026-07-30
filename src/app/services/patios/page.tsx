@@ -1,8 +1,58 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const galleryImages = [
+  { src: "/projects/patio-gallery-1.webp", alt: "Beautiful patio paving installation" },
+  { src: "/projects/patio-gallery-2.jpg", alt: "Patio outdoor living space showcase" },
+  { src: "/projects/patio-gallery-3.jpg", alt: "Garden patio design and landscaping" },
+];
+
 export default function PatiosPage() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+
+  const goNext = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev !== null ? (prev + 1) % galleryImages.length : null
+    );
+  }, []);
+
+  const goPrev = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null
+    );
+  }, []);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (lightboxIndex === null) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [lightboxIndex, goNext, goPrev]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (lightboxIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightboxIndex]);
+
   return (
     <>
       <Navbar />
@@ -137,6 +187,47 @@ export default function PatiosPage() {
         </div>
       </section>
 
+      {/* Project Gallery */}
+      <section className="py-[80px] relative overflow-hidden">
+        <div className="glow-soft absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <div className="marker-line justify-center mb-6">Project Gallery</div>
+            <h2 className="font-display font-extrabold text-4xl lg:text-5xl leading-tight tracking-tight text-[var(--fg)] mb-5">
+              Our Patio &amp; Paving <span className="text-gradient">Work</span>
+            </h2>
+            <p className="text-[var(--muted)] max-w-2xl mx-auto">
+              Take a closer look at some of our recent patio and paving projects.
+              Click any image to view full-screen.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            {galleryImages.map((img, index) => (
+              <button
+                key={index}
+                onClick={() => openLightbox(index)}
+                className="img-zoom rounded-2xl overflow-hidden border border-[var(--line)] bg-[var(--bg-2)] group cursor-pointer text-left relative aspect-[4/3]"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-xs text-white/80 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-sm inline-flex items-center gap-1.5">
+                    <i className="fa-solid fa-expand text-[10px]"></i>
+                    View
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="py-[80px] bg-[var(--bg-2)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -220,6 +311,83 @@ export default function PatiosPage() {
       </section>
 
       <Footer />
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={closeLightbox}
+        >
+          {/* Close button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 lg:top-6 lg:right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition z-10 cursor-pointer"
+            aria-label="Close lightbox"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-white"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+
+          {/* Prev */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
+            className="absolute left-4 lg:left-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition z-10 cursor-pointer"
+            aria-label="Previous image"
+          >
+            <i className="fa-solid fa-chevron-left text-white text-lg"></i>
+          </button>
+
+          {/* Image */}
+          <div
+            className="relative max-w-[90vw] max-h-[90vh] w-full h-full flex items-center justify-center p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full h-full max-w-5xl max-h-[85vh]">
+              <Image
+                src={galleryImages[lightboxIndex].src}
+                alt={galleryImages[lightboxIndex].alt}
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 100vw, 80vw"
+              />
+            </div>
+          </div>
+
+          {/* Next */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+            className="absolute right-4 lg:right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition z-10 cursor-pointer"
+            aria-label="Next image"
+          >
+            <i className="fa-solid fa-chevron-right text-white text-lg"></i>
+          </button>
+
+          {/* Counter */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-sm font-medium bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
+            {lightboxIndex + 1} / {galleryImages.length}
+          </div>
+        </div>
+      )}
     </>
   );
 }
