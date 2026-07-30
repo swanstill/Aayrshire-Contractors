@@ -64,8 +64,8 @@ export default function PatiosPage() {
             </div>
             <div className="order-1 lg:order-2 img-zoom rounded-2xl overflow-hidden shadow-xl shadow-black/30">
               <Image
-                src="/projects/project-4.jpg"
-                alt="Patio installation"
+                src="/projects/patio-what-we-offer.jpg"
+                alt="Beautiful patio outdoor living space"
                 width={700}
                 height={500}
                 className="w-full h-[450px] object-cover"
